@@ -97,6 +97,27 @@ img{
   box-shadow: var(--inner-shadow);
 }
 
+.align-items-center{
+  align-items: center;
+}
+
+.btn-1{
+  background-color: transparent;
+  border-radius: 30px;
+  color: var(--skin-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-1::after{
+  border-radius: 30px;
+}
+
 /* Header Styling */
 
 .header{
@@ -243,4 +264,60 @@ img{
   top: 50%;
   left:-30px;
   transform: translateY(-50%) rotate(-90deg);
+}
+
+/* Home Section Styling */
+
+.home-section .full-screen{
+  min-height: 100vh;
+  padding: 75px 0;
+}
+
+.home-section .home-text, .home-section .home-img{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.home-section .home-text p{
+  color: var(--text-black-300);
+  font-size: 25px;
+  margin: 0;
+}
+
+.home-section .home-text h2{
+  color: var(--text-black-900);
+  font-size: 55px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.home-section .home-text h1{
+  color: var(--text-black-700);
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.home-section .home-text h1 .text-cursor{
+  border-right: 0.2rem solid #777;
+}
+
+.home-section .home-text .btn-1{
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.home-section .home-img .img-box{
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  max-width: 450px;
+  padding: 15px;
+}
+
+.home-section .home-img .img-box img{
+  border: 10px solid transparent;
+  border-radius: 50%;
+  width: 100%;
 }
