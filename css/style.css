@@ -1,0 +1,246 @@
+/* Global Styling */
+
+/* CSS Variables */
+:root{
+  --bg-black-900: #000000;
+  --bg-black-100: #dddddd;
+  --bg-black-50: #eff0f4;
+  --text-black-900: #000000;
+  --text-black-700: #555555;
+  --text-black-600: #666666;
+  --text-black-300: #bbbbbb;
+  --outer-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+  --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+  --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+::before, ::after{
+  box-sizing: border-box;
+}
+
+:not(i){
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  background-color: var(--bg-black-50);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.container{
+  max-width: 1140px;
+  margin: auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.outer-shadow{
+  box-shadow: var(--outer-shadow);
+}
+
+.inner-shadow{
+  box-shadow: var(--inner-shadow);
+}
+
+.hover-in-shadow{
+  position: relative;
+  z-index: 1;
+}
+
+.hover-in-shadow:hover{
+  box-shadow: var(--outer-shadow-0);
+}
+
+.hover-in-shadow::after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+  width: 100%
+}
+
+.hover-in-shadow:hover::after{
+  box-shadow: var(--inner-shadow);
+}
+
+/* Header Styling */
+
+.header{
+  padding: 20px 15px;
+  position: absolute;
+  width: 100%
+  /* top: 0;
+  left: 0;
+  z-index: 99; */
+}
+
+.header .logo a{
+  border: 2px solid var(--skin-color);
+  border-radius: 50%;
+  color: var(--skin-color);
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 40px;
+}
+
+.header .hamburger-btn{
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 40px;
+}
+
+.header .hamburger-btn::after{
+  border-radius: 50%;
+}
+
+.header .hamburger-btn span{
+  background-color: var(--bg-black-900);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 16px;
+}
+
+.header .hamburger-btn span::before, .header .hamburger-btn span::after{
+  background-color: var(--bg-black-900);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%
+}
+
+.header .hamburger-btn span::before{
+  top: -6px;
+}
+
+.header .hamburger-btn span::after{
+  top: 6px;
+}
+
+/* Navigation Menu Styling */
+
+.nav-menu{
+  background-color: var(--bg-black-50);
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+}
+
+.nav-menu .close-nav-menu{
+  border-radius: 50%;
+  color: var(--text-black-600);
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+  line-height: 35px;
+  height: 40px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 40px;
+}
+
+.nav-menu .close-nav-menu::after{
+  border-radius: 50%;
+}
+
+.nav-menu-inner{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.nav-menu ul{
+  padding: 15px;
+  text-align: center;
+}
+
+.nav-menu ul li{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.nav-menu ul li:last-child{
+  margin-bottom: 0;
+}
+
+.nav-menu ul li a{
+  border-radius: 30px;
+  color: var(--text-black-700);
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 5px 30px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu ul li a::after{
+  border-radius: 30px;
+}
+
+.nav-menu ul li a.active{
+  color: var(--skin-color);
+}
+
+.nav-menu .copyright-text{
+  color: var(--text-black-300);
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left:-30px;
+  transform: translateY(-50%) rotate(-90deg);
+}
