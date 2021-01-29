@@ -222,6 +222,31 @@ img{
   width: 1px;
 }
 
+.section-title{
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.section-title h2{
+  color: var(--text-black-900);
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.section-title h2::before{
+  color: var(--skin-color);
+  content: attr(data-heading);
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /* Header Styling */
 
 .header{
@@ -427,4 +452,147 @@ img{
   border: 10px solid transparent;
   border-radius: 50%;
   width: 100%;
+}
+
+/* About Section Styling */
+.about-section{
+  min-height: 100vh;
+  padding: 80px 0 0;
+}
+
+.about-section .about-img{
+  flex: 0 0 40%;
+  max-width: 40%;
+  padding: 0 15px;
+}
+
+.about-section .about-img .img-box{
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.about-section .about-img .img-box img{
+  border: 10px solid transparent;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.about-section .about-img .social-links{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.about-section .about-img .social-links a{
+  border-radius: 50%;
+  color: var(--text-black-700);
+  display: inline-block;
+  font-size: 22px;
+  height: 35px;
+  line-height: 40px;
+  margin: 0 5px;
+  width: 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-section .about-img .social-links a::after{
+  border-radius: 50%;
+}
+
+.about-section .about-img .social-links a:hover{
+  color: var(--skin-color);
+}
+
+.about-section .about-info{
+  flex: 0 0 60%;
+  max-width: 60%;
+  padding: 0 15px;
+}
+
+.about-section .about-info p{
+  color: var(--text-black-700);
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+
+.about-section .about-info span{
+  font-weight: 600;
+}
+
+.about-section .about-info .btn-1{
+  margin: 30px 20px 0 0;
+}
+
+.about-section .about-tabs{
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 60px 15px 50px;
+  text-align: center;
+}
+
+.about-section .about-tabs .tab-items{
+  border-radius: 30px;
+  color: var(--text-black-600);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 5px 10px;
+  padding: 5px 1px;
+  transition: all 0.3s ease;
+}
+
+.about-section .about-tabs .tab-items:hover:not(.active){
+  opacity: 0.6;
+}
+
+.about-section .about-tabs .tab-items.active{
+  color: var(--skin-color);
+}
+
+.about-section .tab-content{
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.about-section .skills{
+  padding: 0 0 40px;
+}
+
+.about-section .skills .skill-item{
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-bottom: 40px;
+  padding: 0 15px;
+}
+
+.about-section .skills .skill-item p{
+  color: var(--skin-color);
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.about-section .skills .skill-item .progress{
+  border-radius: 10px;
+  height: 20px;
+  position: relative;
+}
+
+.about-section .skills .skill-item .progress-bar{
+  background-color: var(--text-black-600);
+  border-radius: 10px;
+  height: 6px;
+  position: absolute;
+  left:7px;
+  top: 7px;
+}
+
+.about-section .skills .skill-item .progress-bar span{
+  color: var(--text-black-600);
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
