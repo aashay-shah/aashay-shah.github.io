@@ -222,6 +222,17 @@ img{
   width: 1px;
 }
 
+@keyframes fadeInTop {
+  0%{
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .section-title{
   flex: 0 0 100%;
   max-width: 100%;
@@ -539,7 +550,7 @@ img{
   font-size: 18px;
   font-weight: 500;
   margin: 0 5px 10px;
-  padding: 5px 1px;
+  padding: 5px;
   transition: all 0.3s ease;
 }
 
@@ -552,8 +563,14 @@ img{
 }
 
 .about-section .tab-content{
+  display: none;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.about-section .tab-content.active{
+  display: block;
+  animation: fadeInTop 0.5s ease;
 }
 
 .about-section .skills{
@@ -595,4 +612,115 @@ img{
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.about-section .experience, .about-section .education{
+  padding: 0 0 80px;
+}
+
+.about-section .timeline{
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.about-section .timeline::before{
+  background-color: var(--bg-black-100);
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+}
+
+.about-section .timeline .timeline-item{
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd){
+  padding-right: calc(50% + 50px);
+  text-align: right;
+}
+
+.about-section .timeline .timeline-item:nth-child(even){
+  padding-left: calc(50% + 50px);
+}
+
+.about-section .timeline .timeline-item-inner{
+  border-radius: 5px;
+  padding: 30px;
+  position: relative;
+}
+
+.about-section .timeline .timeline-item-inner::before{
+  background-color: var(--bg-black-100);
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: 37px;
+  width: 30px;
+  z-index: -1;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner::before{
+  right: -30px;
+}
+
+.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner::before{
+  left: -30px;
+}
+
+.about-section .timeline .timeline-item-inner .icon{
+  background-color: var(--bg-black-50);
+  border: 1px solid var(--bg-black-100);
+  border-radius: 50%;
+  color: var(--skin-color);
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  top: 18px;
+  text-align: center;
+  width: 40px;
+}
+
+.about-section .timeline .timeline-item:nth-child(odd) .icon{
+  right: -70px;
+}
+
+.about-section .timeline .timeline-item:nth-child(even) .icon{
+  left: -70px;
+}
+
+.about-section .timeline .timeline-item-inner span{
+  color: var(--skin-color);
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.about-section .timeline .timeline-item-inner h3{
+  color: var(--text-black-700);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.about-section .timeline .timeline-item-inner h4{
+  color: var(--text-black-600);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+.about-section .timeline .timeline-item-inner p{
+  color: var(--text-black-600);
+  font-size: 16px;
+  line-height: 26px;
+  margin: 10px 0 0;
 }
