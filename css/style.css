@@ -12,7 +12,7 @@
   --outer-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
   --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
   --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
-
+  --inner-shadow-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8;
 }
 
 *{
@@ -723,4 +723,73 @@ img{
   font-size: 16px;
   line-height: 26px;
   margin: 10px 0 0;
+}
+
+/* Service Section Styling */
+.service-section{
+  min-height: 100vh;
+  padding: 80px 0 80px;
+}
+
+.service-section .service-item{
+  display: flex;
+  flex: 0 0 33.33%;
+  flex-wrap: wrap;
+  max-width: 33.33%;
+  padding: 15px;
+}
+
+.service-section .service-item-inner{
+  border-radius: 5px;
+  padding: 40px 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.service-section .service-item-inner .icon{
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  margin: 0 auto 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 50px;
+}
+
+.service-section .service-item-inner .icon::after{
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.service-section .service-item-inner:hover .icon{
+  box-shadow: var(--inner-shadow-0);
+}
+
+.service-section .service-item-inner:hover .icon::after{
+  box-shadow: var(--outer-shadow);
+}
+
+.service-section .service-item-inner .icon i{
+  color: var(--text-black-700);
+  font-size: 25px;
+  line-height: 50px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-section .service-item-inner:hover .icon i{
+  color: var(--skin-color);
+}
+
+.service-section .service-item-inner h3{
+  color: var(--text-black-700);
+  font-size: 20px;
+  font-weight: 600;
 }
