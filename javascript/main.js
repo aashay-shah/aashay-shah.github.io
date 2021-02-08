@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 // About Section Tabs
 
 (() => {
@@ -12,5 +14,14 @@
       aboutSection.querySelector(".tab-content.active").classList.remove("active");
       aboutSection.querySelector(target).classList.add("active");
     }
-  })
+  });
+})();
+
+// Portfolio Popups
+
+(() => {
+  const portfolioItemsContainer = document.querySelector(".portfolio-items");
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+  const popup = document.querySelector(".portfolio-popup");
+  const proejctDetailsContainer = document.querySelector(".pp-details");
 })();
