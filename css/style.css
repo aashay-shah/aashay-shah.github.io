@@ -859,6 +859,18 @@ img{
   margin: 10px 0 0;
 }
 
+.portfolio-section .portfolio-item-inner .portfolio-item-category{
+  color: var(--text-black-600);
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0;
+  transition: 0.3s all ease;
+}
+
+.portfolio-section .portfolio-item-inner:hover .portfolio-item-category{
+  opacity: 1;
+}
+
 .portfolio-section .portfolio-item-details{
   display: none;
 }
