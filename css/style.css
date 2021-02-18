@@ -91,7 +91,8 @@ img{
   left: 0;
   top: 0;
   transition: all 0.3s ease;
-  width: 100%
+  width: 100%;
+  z-index: -1;
 }
 
 .hover-in-shadow:hover::after{
@@ -104,6 +105,7 @@ img{
 
 .btn-1{
   background-color: transparent;
+  border: none;
   border-radius: 30px;
   color: var(--skin-color);
   cursor: pointer;
@@ -975,4 +977,94 @@ img{
 
 .testimonial-section .testi-slider-nav span i{
   line-height: 40px;
+}
+
+/* Contact Section Styling */
+
+.contact-section{
+  min-height: 100vh;
+  padding: 80px 0 80px;
+}
+
+.contact-section .contact-item{
+  display: flex;
+  flex: 0 0 33.33%;
+  flex-wrap: wrap;
+  max-width: 33.33%;
+  padding: 15px;
+}
+
+.contact-section .contact-item-inner{
+  border-radius: 5px;
+  padding: 30px 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-section .contact-item-inner i{
+  color: var(--skin-color);
+  font-size: 25px;
+}
+
+.contact-section .contact-item-inner span{
+  color: var(--text-black-700);
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 15px 0 10px;
+}
+
+.contact-section .contact-item-inner p{
+  color: var(--text-black-600);
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  word-break: break-word;
+}
+
+.contact-section .contact-form{
+  flex: 0 0 100%;
+  margin-top: 50px;
+  max-width: 100%;
+}
+
+.contact-section .w-50{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+.contact-section .input-group{
+  border-radius: 30px;
+  margin: 0 0 25px;
+  transition: all 0.3s ease;
+}
+
+.contact-section .input-group::after{
+  border-radius: 30px;
+}
+
+.contact-section .input-group .input-control{
+  background-color: transparent;
+  border: none;
+  border-radius: 30px;
+  color: var(--text-black-700);
+  display: block;
+  font-size: 16px;
+  height: 45px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.contact-section .input-group textarea.input-control{
+  height: 185px;
+  padding-top: 15px;
+  resize: none;
+}
+
+.contact-section .submit-btn{
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  text-align: right;
 }
