@@ -6,14 +6,16 @@
   }
 }
 
-@media (max-width: 667px) {
+@media (max-width: 767px) {
   .home-section .home-text,
   .home-section .home-img,
   .about-section .about-img,
   .about-section .about-info,
   .about-section .skills .skill-item,
   .service-section .service-item,
-  .portfolio-section .portfolio-item{
+  .portfolio-section .portfolio-item,
+  .contact-section .contact-item,
+  .contact-section .contact-form .w-50{
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -48,7 +50,8 @@
     padding-bottom: 30px;
   }
 
-  .about-section .about-info{
+  .about-section .about-info,
+  .contact-section .submit-btn{
     text-align: center;
   }
 
