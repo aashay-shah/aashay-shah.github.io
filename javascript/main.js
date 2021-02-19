@@ -1,5 +1,73 @@
 //jshint esversion:6
 
+// Navigation Menu
+
+(() => {
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const navMenu = document.querySelector(".nav-menu");
+  const closeNavBtn = navMenu.querySelector(".close-nav-menu");
+
+  hamburgerBtn.addEventListener("click", showNavMenu);
+  closeNavBtn.addEventListener("click", hideNavMenu);
+
+  function showNavMenu(){
+    navMenu.classList.add("open");
+    bodyScrollingToggle();
+  }
+  function hideNavMenu(){
+    navMenu.classList.remove("open");
+    fadeOutEffect();
+    bodyScrollingToggle();
+  }
+  function bodyScrollingToggle(){
+    document.body.classList.toggle('hidden-scrolling');
+  }
+  function fadeOutEffect(){
+    document.querySelector(".fade-out-effect").classList.add("active");
+    setTimeout(() =>{
+      document.querySelector(".fade-out-effect").classList.remove("active");
+    }, 300);
+  }
+
+  document.addEventListener("click", (event) => {
+    if(event.target.classList.contains("link-item")){
+      if(event.target.hash !== ""){
+        event.preventDefault();
+        const hash = event.target.hash;
+        console.log(hash);
+        // Deactivate Active Section
+        document.querySelector(".section.active").classList.add("hide");
+        document.querySelector(".section.active").classList.remove("active");
+        // Activate New Section
+        document.querySelector(hash).classList.add("active");
+        document.querySelector(hash).classList.remove("hide");
+        // Deactivate Navigation Menu Active Link
+        navMenu.querySelector(".active").
+        classList.add("outer-shadow", "hover-in-shadow");
+        navMenu.querySelector(".active").classList.remove("active", "inner-shadow");
+        if(navMenu.classList.contains("open")){
+          // Activate Navigation Menu New Link
+          event.target.classList.add("active", "inner-shadow");
+          event.target.classList.remove("outer-shadow", "hover-in-shadow");
+          // Close Navigation Menu
+          hideNavMenu();
+        }
+        else{
+          let navItems = navMenu.querySelectorAll(".link-item");
+          navItems.forEach((item) =>{
+            if(hash === item.hash){
+              item.classList.add("active", "inner-shadow");
+              item.classList.remove("outer-shadow", "hover-in-shadow");
+            }
+          });
+          fadeOutEffect();
+        }
+        window.location.hash = hash;
+      }
+    }
+  });
+})();
+
 // About Section Tabs
 
 (() => {
@@ -60,4 +128,16 @@
     sliderContainer.style.marginLeft = - (slideWidth * slideIndex) + "px";
   }
   slider();
+})();
+
+// Hide all Inactive Sections
+
+(() => {
+  const sections = document.querySelectorAll(".section");
+
+  sections.forEach((section) => {
+    if(!section.classList.contains("active")){
+      section.classList.add("hide");
+    }
+  });
 })();
