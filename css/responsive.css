@@ -1,4 +1,4 @@
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .service-section .service-item,
   .portfolio-section .portfolio-item{
     flex: 0 0 50%;
@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .home-section .home-text,
   .home-section .home-img,
   .about-section .about-img,
@@ -92,7 +92,7 @@
   }
 }
 
-@media (max-width: 574px) {
+@media (max-width: 767px) {
   .home-section .home-img .img-box{
     max-width: 260px
   }
