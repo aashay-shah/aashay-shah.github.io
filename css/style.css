@@ -38,6 +38,19 @@ body{
   /* overflow-y: hidden; */
 }
 
+body.dark{
+  --bg-black-900: #ffffff;
+  --bg-black-100: #353535;
+  --bg-black-50: #2b2c2f;
+  --text-black-900: #ffffff;
+  --text-black-700: #ffffff;
+  --text-black-600: #bbbbbb;
+  --outer-shadow: 3px 3px 3px #222327, -3px -3px 3px #363636;
+  --outer-shadow-0: 0 0 0 #222327, 0 0 0 #363636;
+  --inner-shadow: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
+  --inner-shadow-0: inset 0 0 0 #222327, inset 0 0 0 #363636;
+}
+
 body.hidden-scrolling{
   overflow-y: hidden;
 }
@@ -774,7 +787,6 @@ img{
 .service-section{
   min-height: 100vh;
   padding: 80px 0 80px;
-  z-index: 999;
 }
 
 .service-section .service-item{
@@ -790,6 +802,7 @@ img{
   padding: 40px 15px;
   text-align: center;
   width: 100%;
+  /* position: relative; */
 }
 
 .service-section .service-item-inner .icon{
@@ -802,7 +815,7 @@ img{
   width: 50px;
 }
 
-.service-section .service-item-inner .icon::after{
+/* .service-section .service-item-inner .icon::after{
   border-radius: 50%;
   content: '';
   height: 100%;
@@ -811,7 +824,7 @@ img{
   top: 0;
   transition: all 0.3s ease;
   width: 100%;
-}
+} */
 
 .service-section .service-item-inner:hover .icon{
   box-shadow: var(--inner-shadow-0);
@@ -827,7 +840,7 @@ img{
   line-height: 50px;
   position: relative;
   text-align: center;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .service-section .service-item-inner:hover .icon i{
